@@ -28,10 +28,10 @@ sudo systemctl enable nginx
 
 Now, add shh key for github
 
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "muhammadjibrandev@gmail.com"
 cat ~/.ssh/id_rsa.pub
-git config --global user.email "your_email@example.com"
-git config --global user.name "Your Name"
+git config --global user.email "muhammadjibrandev@gmail.com"
+git config --global user.name "Jibrand"
 
 Now, install pm2
 
