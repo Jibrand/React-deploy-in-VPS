@@ -76,5 +76,5 @@ sudo chmod 755 /home
 
 
 
-
+To Delete the node_modules in windows: RMDIR node_modules
 
