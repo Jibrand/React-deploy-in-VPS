@@ -2,6 +2,11 @@ Video: https://www.youtube.com/watch?v=6-RtA6FlbgQ
 video for react deploy: https://www.youtube.com/watch?v=I_FmJGtOePk
 flask :https://www.youtube.com/watch?v=ct1GbTvgVNM
 
+for ssl in vps:
+1) https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04
+2) sudo ln -s /etc/nginx/sites-available/chatt.hackerverse.uno /etc/nginx/sites-enabled/
+3) https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+
 first of all create non-root user
 
 adduser jibran
