@@ -89,4 +89,26 @@ pm2 serve dist --name dashboard
 pm2 serve dist/ 3000 --name "react-build" --spa
 To Delete the node_modules in windows: RMDIR node_modules
 
+---
+Apache2 routing problem:
+sudo a2enmod rewrite
+
+sudo nano /etc/apache2/apache2.conf
+
+Options Indexes FollowSymLinks
+AllowOverride All
+Require all granted
+
+sudo nano /var/www/html/.htaccess
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+
+sudo systemctl restart apache2
 
