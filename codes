@@ -112,3 +112,22 @@ RewriteRule . /index.html [L]
 
 sudo systemctl restart apache2
 
+
+
+
+
+
+React Native Deploy--------------------------------
+use cmd administration:
+    npm i -g expo-cli
+    npx expo login
+    npx expo publish
+after you get android bundle in the expo.dev just download teh aab fie
+1) install bundler  [https://github.com/google/bundletool/releases]
+2) now make aab and bundle in one place and open teh cmd
+3) now make apks file from this command, but install java [java -jar bundle.jar build-apks --bundle=app.aab --output=outpu.apk --mode=universal
+]
+4) now java -jar bundle.jar build-apks --bundle=app.aab --output=output.apks --mode=universal
+5) now, ren output.apks output1.zip
+6) now, tar -xf output1.zip
+7) use universal apk file
