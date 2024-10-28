@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Switch to root user
+echo "Switching to root user..."
+sudo su
+
+# Update system packages
+echo "Updating system packages..."
+sudo apt update
+
+# Allow OpenSSH through the firewall
+echo "Allowing OpenSSH through the firewall..."
+sudo ufw allow OpenSSH
+
+# Enable the firewall and accept the prompt
+echo "Enabling the firewall..."
+echo "y" | sudo ufw enable
+
+# Install Nginx
+echo "Installing Nginx..."
+sudo apt install -y nginx
+
+# Allow Nginx HTTP through the firewall
+echo "Allowing Nginx HTTP through the firewall..."
+sudo ufw allow 'Nginx HTTP'
+
+# Check the status of Nginx
+echo "Checking Nginx status..."
+sudo systemctl status nginx 
+
+echo "Environment setup and deployment steps completed successfully."
