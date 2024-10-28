@@ -19,6 +19,9 @@ sudo apt install -y nginx
 # Allow Nginx HTTP through the firewall
 echo "Allowing Nginx HTTP through the firewall..."
 sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 3001/tcp
+sudo ufw allow 3001
+
 
 # Check the status of Nginx
 echo "Checking Nginx status..."
