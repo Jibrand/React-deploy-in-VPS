@@ -187,3 +187,13 @@ sudo nginx -t
 sudo systemctl reload nginx
 sudo systemctl restart nginx
 
+
+
+
+
+
+
+-----------second github account form PC
+git remote set-url origin git@github-company:JibranKiyonai/km.git
+
+
