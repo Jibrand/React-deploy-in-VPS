@@ -59,3 +59,9 @@ kubectl cluster-info
 
 --Install Pod Network (Calico)
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+--run working nodes from:
+kubeadm join <master-ip>:6443 --token abcdef.0123456789abcdef --discovery-token-ca-cert-hash sha256:<hash>
+..or get from here:
+kubeadm token create --print-join-command
+
