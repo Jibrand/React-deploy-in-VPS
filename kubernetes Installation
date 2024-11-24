@@ -1,0 +1,60 @@
+sudo apt update
+
+----Install Docker:
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl status docker
+sudo systemctl start docker
+
+
+-- Add Kubernetes APT Repository:
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+
+
+--Add Kubernetes GPG Key:
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+
+--Add Kubernetes Repository:
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
+
+
+--Install kubectl:
+sudo apt-get update
+sudo apt-get install -y kubectl
+kubectl version --client
+
+
+--Disable Swap:
+sudo swapoff -a
+sudo sed -i '/swap/d' /etc/fstab
+
+
+--Start and Enable Kubelet
+sudo systemctl start kubelet
+sudo systemctl enable kubelet
+sudo systemctl status kubelet
+
+
+
+--Initialize Kubernetes Cluster
+sudo kubeadm init
+
+
+
+--Configure kubectl
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl cluster-info
+
+
+
+
+--Install Pod Network (Calico)
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
