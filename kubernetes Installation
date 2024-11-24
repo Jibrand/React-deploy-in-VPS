@@ -23,10 +23,11 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 
 
---Install kubectl:
+--Install kubectl, kubeadm, kubelet:
 sudo apt-get update
 sudo apt-get install -y kubectl
 kubectl version --client
+sudo apt install kubeadm kubelet kubectl
 
 
 --Disable Swap:
