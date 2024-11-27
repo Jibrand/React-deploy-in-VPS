@@ -76,3 +76,11 @@ kubeadm join <master-ip>:6443 --token abcdef.0123456789abcdef --discovery-token-
 ..or get from here:
 kubeadm token create --print-join-command
 
+
+
+--run docker image
+docker build -t my-react-app:latest .
+--run docker image in kubernetes
+kubectl apply -f react-app-deployment.yaml
+
+
