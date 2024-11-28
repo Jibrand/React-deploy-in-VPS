@@ -84,3 +84,25 @@ docker build -t my-react-app:latest .
 kubectl apply -f react-app-deployment.yaml
 
 
+--remove conainers in Docker
+docker rm $(docker ps -aq) -f
+--rove images
+docker rmi $(docker images -q)
+--remove all
+docker system prune -a
+
+
+--docker registry
+vi  /etc/docker/daemon.json
+
+{
+  "insecure-registries":["192.168.145.130:5000"],
+
+}
+
+docker run -d -p 5000:5000 --restart=always --name registry -v $(pwd)/dregistry:/var/lib/registry registry:latest
+curl -X GET http://192.168.145.130:5000/v2/_catalog
+
+docker tag react-app 172.31.41.90:5000/react-app   
+docker push 172.31.41.90:5000/react-app
+
