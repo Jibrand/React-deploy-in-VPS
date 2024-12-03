@@ -106,3 +106,34 @@ curl -X GET http://192.168.145.130:5000/v2/_catalog
 docker tag react-app 172.31.41.90:5000/react-app   
 docker push 172.31.41.90:5000/react-app
 
+
+
+--kubectl get image from private repo
+kubectl create secret docker-registry regcred \
+  --docker-server=d.genieengage.tech \
+  --docker-username=<your-username> \
+  --docker-password=<your-password> \
+
+addthis line in depoyment yml file
+
+  spec:
+      containers:
+      - name: react-app
+        image: d.genieengage.tech/react-app
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
+
+
+
+
+
+--to forcfully delelte depoyment cointenet in kubctl
+kubectl delete pod react-app-887cf4f66-s4wmz --grace-period=0 --force
+
+
+
+
+---service
+ kubectl get svc react-app-service
