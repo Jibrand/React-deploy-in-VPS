@@ -120,8 +120,8 @@ sudo systemctl restart apache2
 React Native Deploy--------------------------------
 use cmd administration:
     npm i -g expo-cli
-    npx expo login
-    npx expo publish
+    npx expo login 
+    npx expo publish or eas update then  eas build --platform android
 after you get android bundle in the expo.dev just download teh aab fie
 1) install bundler  [https://github.com/google/bundletool/releases]
 2) now make aab and bundle in one place and open teh cmd
