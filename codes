@@ -122,6 +122,8 @@ use cmd administration:
     npm i -g expo-cli
     npx expo login 
     npx expo publish or eas update then  eas build --platform android
+
+
 after you get android bundle in the expo.dev just download teh aab fie
 1) install bundler  [https://github.com/google/bundletool/releases]
 2) now make aab and bundle in one place and open teh cmd
@@ -131,6 +133,11 @@ after you get android bundle in the expo.dev just download teh aab fie
 5) now, ren output.apks output1.zip
 6) now, tar -xf output1.zip
 7) use universal apk file
+
+
+or 
+eas build --platform android --profile preview
+
 
 
 
