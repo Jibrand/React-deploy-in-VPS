@@ -148,3 +148,14 @@ kubectl set image deployment/frontend-deployment frontend=jibrandev/frontend:v1.
 kubectl rollout status deployment/frontend-deployment -n mern
 
 
+
+--Use Kubernetes Rollback Commands:
+kubectl rollout undo deployment/frontend-deployment
+
+
+Steps to Conduct Load Tests:
+Select a Load Testing Tool: Some popular tools for load testing are:
+Apache JMeter – Open-source tool for performance and load testing.
+Gatling – A high-performance, open-source load testing tool.
+Artillery – A modern, powerful, and easy-to-use load testing toolkit.
+k6 – Open-source load testing tool that allows you to write tests in JavaScript.
