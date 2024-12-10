@@ -137,3 +137,14 @@ kubectl delete pod react-app-887cf4f66-s4wmz --grace-period=0 --force
 
 ---service
  kubectl get svc react-app-service
+
+
+
+--once teh kubertenets deployment done, steps to update  for nest time
+-update your code
+docker build -t jibrandev/frontend:v1.1 .
+docker push jibrandev/frontend:v1.1
+kubectl set image deployment/frontend-deployment frontend=jibrandev/frontend:v1.1 -n mern
+kubectl rollout status deployment/frontend-deployment -n mern
+
+
