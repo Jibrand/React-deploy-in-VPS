@@ -159,3 +159,15 @@ Apache JMeter – Open-source tool for performance and load testing.
 Gatling – A high-performance, open-source load testing tool.
 Artillery – A modern, powerful, and easy-to-use load testing toolkit.
 k6 – Open-source load testing tool that allows you to write tests in JavaScript.
+
+
+
+
+--to scale up manualy
+kubectl scale deployment nginx --replicas=1
+
+--for hpa
+kubectl get hpa
+
+for metroc server which is necessary for hpa
+run all https://github.com/ashokitschool/k8s_metrics_server/tree/main/deploy/1.8%2B
